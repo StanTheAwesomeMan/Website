@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'JetBrains Mono Nerd Font';
+  src: url('/home/bea/.local/share/fonts/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Catppuccin Mocha theme colors */
+:root {
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+}
+
+/* Body */
+body {
+  background-color: var(--base);
+  color: var(--text);
+  font-family: 'JetBrains Mono Nerd Font';
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--lavender);
+}
+
+/* Links */
+a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sky);
+  text-decoration: underline;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 15px;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: var(--surface0);
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2px 4px;
+}
+
+/* Buttons */
+button {
+  background-color: var(--mauve);
+  border: none;
+  border-radius: 4px;
+  color: var(--base);
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--pink);
+}
+
+/* Input fields */
+input[type="text"], input[type="email"], textarea {
+  background-color: var(--surface1);
+  border: 1px solid var(--overlay0);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 8px;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 20px;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid var(--overlay0);
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--surface0);
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
