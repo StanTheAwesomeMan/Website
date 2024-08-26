@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'JetBrains Mono Nerd Font';
-  src: url('/home/bea/.local/share/fonts/fonts/ttf/JetBrainsMono-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 /* Catppuccin Mocha theme colors */
 :root {
   --rosewater: #f5e0dc;
@@ -35,19 +28,45 @@
   --crust: #11111b;
 }
 
-/* Body */
 body {
-  background-color: var(--base);
-  color: var(--text);
-  font-family: 'JetBrains Mono Nerd Font';
-  line-height: 1.6;
+  height: 100%;
+  display: flex;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
+/* Body */
+body {
+  background: linear-gradient(to bottom right, color-mix(in srgb, var(--sky), var(--crust) 80%), color-mix(in srgb, var(--mauve), var(--crust) 80%));
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.6;
+  margin: 0;
+  padding: 50px;
+  overflow-y: auto;
+}
+
+/* Headings, rainbow order */
+h1 {
   color: var(--lavender);
+}
+
+h2 {
+  color: var(--blue);
+}
+
+h3 {
+  color: var(--sapphire);
+}
+
+h4 {
+  color: var(--sky);
+}
+
+h5 {
+  color: var(--teal);
 }
 
 /* Links */
@@ -67,7 +86,8 @@ p {
 }
 
 /* Code blocks */
-pre, code {
+pre,
+code {
   background-color: var(--surface0);
   border-radius: 4px;
   font-family: 'Courier New', Courier, monospace;
@@ -90,7 +110,9 @@ button:hover {
 }
 
 /* Input fields */
-input[type="text"], input[type="email"], textarea {
+input[type="text"],
+input[type="email"],
+textarea {
   background-color: var(--surface1);
   border: 1px solid var(--overlay0);
   border-radius: 4px;
@@ -99,7 +121,8 @@ input[type="text"], input[type="email"], textarea {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   margin-left: 20px;
 }
 
@@ -109,7 +132,8 @@ table {
   width: 100%;
 }
 
-th, td {
+th,
+td {
   border: 1px solid var(--overlay0);
   padding: 8px;
   text-align: left;
@@ -121,6 +145,58 @@ th {
 
 #app {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#image {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+}
+
+#loremipsum {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: color 1000ms ease;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--surface0);
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--surface0);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--overlay0);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--overlay1);
 }
