@@ -28,14 +28,6 @@
   --crust: #11111b;
 }
 
-body {
-  height: 100%;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 /* Body */
 body {
   background: linear-gradient(to bottom right, color-mix(in srgb, var(--sky), var(--crust) 80%), color-mix(in srgb, var(--mauve), var(--crust) 80%));
@@ -45,6 +37,9 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 50px;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
   overflow-y: auto;
 }
 
