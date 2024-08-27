@@ -26,13 +26,14 @@
   --base: #1e1e2e;
   --mantle: #181825;
   --crust: #11111b;
+
+  --sky-mixed: #293a45;
+  --mauve-mixed: #362f47;
 }
 
 /* Body */
 body {
-  background: linear-gradient(to bottom right,
-    color-mix(in srgb, var(--sky), var(--crust) 80%),
-    color-mix(in srgb, var(--mauve), var(--crust) 80%));
+  background: linear-gradient(to bottom right, var(--sky-mixed), var(--mauve-mixed));
   background-attachment: fixed;
   color: var(--text);
   font-family: 'JetBrains Mono', monospace;
