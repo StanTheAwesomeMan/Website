@@ -23,3 +23,23 @@ text.style.color = colors[currentColorIndex];
 
 // Change color
 setInterval(changeColor, 1000);
+
+// Show site
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a.nav');
+  const sites = document.querySelectorAll('.site');
+
+  function showSite(id) {
+      sites.forEach(site => site.classList.remove('active'));
+      document.querySelector(id).classList.add('active');
+  }
+
+  links.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          showSite(this.getAttribute('href'));
+      });
+  });
+
+  showSite('#home');
+});
