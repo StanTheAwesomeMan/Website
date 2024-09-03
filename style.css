@@ -35,7 +35,8 @@
 body {
   color: var(--text);
   font-family: 'JetBrains Mono', monospace;
-  line-height: 1.6;
+  /* dynamic font size */
+  font-size: calc(10px + (24 - 16) * ((100vw - 300px) / (2000 - 300)));
   margin: 0;
   overflow: hidden;
   overflow-y: auto;
@@ -137,122 +138,63 @@ textarea {
 *::-webkit-scrollbar-thumb:hover {
   background-color: var(--overlay1);
 }
+/* General layout and spacing */
+.container {
+  display: flex; 
+  flex-direction: column;
+  flex-wrap: wrap; 
+  gap: 20px; 
+  padding: 20px;
+  background-color: var(--crust);
+}
 
-/* Header */
-header {
-  background-color: var(--mantle);
-  padding: auto;
+.section {
+  background-color: var(--base); 
+  border-radius: 8px; 
+  padding: 20px;
+  flex: 1 0 100px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  display: flex; /* Enable flexbox for each section */
+  flex-direction: column;
+}
+
+/* Image Styling */
+.section img {
+  width: 40%; /* Adjust image width as needed */
+  height: 100%; /* Set image height to match the text height */
+  display: block; 
+  object-fit: contain; /* Prevent image from stretching vertically */
+  margin: 0 15px; /* Add spacing around the image */
+}
+
+/* Text Styling */
+.section .text-content { /* Target the text content within each section */
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  z-index: 1000;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  height: 60px;
-  margin-left: 10px;
-}
-
-.logo img {
-  height: 40px;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: var(--text);
-  text-decoration: none;
-}
-
-/* Index */
-.index {
-  background-color: var(--base);
-  position: fixed;
-  top: 60px;
-  left: 0;
-  bottom: 0;
-  width: 230px;
-  overflow-y: auto;
-  display: flex;
+/* Alternate image and text positions */
+.section:nth-child(odd) > .text-content { /* Odd sections: image on the left */
   flex-direction: row;
 }
 
-.index ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.section:nth-child(even) > .text-content { /* Even sections: image on the right */
+  flex-direction: row-reverse;
 }
 
-.index li {
-  margin-top: 10px;
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+  .section {
+    flex-direction: column; /* Stack image and text vertically on smaller screens */
+  }
+
+  .section img {
+    width: 100%; /* Image takes full width on smaller screens */
+    margin-bottom: 15px;
+  }
 }
 
-.index a {
-  color: var(--text);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: calc(100% - 40px);
-  margin: 0 10px;
-  padding: 5px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.index a:hover {
-  background-color: var(--surface0);
-}
-
-/* Frame */
-.frame {
-  background: linear-gradient(to bottom right, var(--sky-mixed), var(--mauve-mixed));
-  display: flex;
-  padding-top: 60px;
-  padding-left: 100px;
-  height: calc(100vh - 60px);
-}
-
-.frame div {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  top: 60px;
-  left: 230px;
-  padding: 20px;
-  min-width: calc(100vw - 230px - 40px);
-  min-height: calc(100vh - 60px - 40px);
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.3s ease, opacity 0.3s ease;
-  text-align: center;
-}
-
-.frame div:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* Arch */
-.img {
-  max-width: 90vh;
-  max-height: calc(50vh - 10px);
-}

@@ -1,70 +1,121 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilfe</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  <body>
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <img src="img/arch.png" alt="Logo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilfe</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <article class="section">
+      <h1>3D Printing</h1>
+      <div class="text-content">
+        3D printing, also known as additive manufacturing, is a revolutionary process that creates three-dimensional objects from digital models. It works by layering materials like plastics, metals, ceramics, and even biomaterials to build the object layer by layer. This technology has found applications in various fields, including rapid prototyping, manufacturing, healthcare, aerospace, and even food production.
       </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-        </ul>
-      </nav>
-    </header>
+    </article>
 
-    <!-- Index -->
-    <aside class="index">
-      <ul>
-        <li><a href="#page1">Installation</a></li>
-        <li><a href="#page2">Paketeverwaltung</a></li>
-        <li><a href="#page3">Systemkonfiguration</a></li>
-        <li><a href="#page4">DE und WM</a></li>
-      </ul>
-    </aside>
-
-    <!-- Frame -->
-    <main class="frame">
-      <!-- Home -->
-      <div id="home">
-        <h1>Arch Linux</h1>
-        <p>Arch Linux folgt dem KISS-Prinzip ("Keep It Simple, Stupid") und bietet ein schlankes Grundsystem, das Benutzer nach ihren Bedürfnissen erweitern können.</p>
-        <img class="img" src="img/arch.png">
+    <article class="section">
+      <h2>Materials</h2>
+      <div class="text-content">
+        <img src="img/filament.jpg" alt="Spools of various filament types"> 
+        <dl>
+          <dt>PLA (Polylactic Acid)</dt>
+          <dd>
+            A bioplastic derived from renewable resources like cornstarch or sugarcane. It's a popular choice due to its low cost, ease of use, and biodegradability. PLA is ideal for parts requiring high detail but not exposed to high temperatures or stress.
+          </dd>
+          <dt>ABS (Acrylonitrile Butadiene Styrene)</dt>
+          <dd>
+            A petroleum-based plastic known for its strength, impact resistance, and high melting point. While it's commonly used for its affordability and ability to produce detailed parts, ABS can be brittle and prone to warping.
+          </dd>
+          <dt>PETG (Polyethylene Terephthalate Glycol)</dt>
+          <dd>
+            A modified version of PET that offers improved flexibility and less brittleness compared to PLA. It also exhibits better resistance to warping and a higher melting point.
+          </dd>
+          <dt>Nylon</dt>
+          <dd>
+            A strong, flexible, and abrasion-resistant plastic frequently used in 3D printing. Its high melting point and resistance to warping make it suitable for functional parts.
+          </dd>
+          <dt>Resin</dt>
+          <dd>
+            A liquid photopolymer used in SLA and DLP 3D printing. While more expensive than filament-based materials, resin allows for exceptionally high detail and accuracy, making it ideal for intricate models and jewelry.
+          </dd>
+          <dt>TPU (Thermoplastic Polyurethane)</dt>
+          <dd>
+            A flexible and elastic material often used for creating parts that need to bend or stretch, such as phone cases, gaskets, and wearables.
+          </dd>
+          <dt>Carbon Fiber Filled Filaments</dt>
+          <dd>
+            These filaments combine the strength and stiffness of carbon fiber with the printability of plastics like PLA or Nylon, resulting in parts with enhanced mechanical properties.
+          </dd>
+        </dl>
       </div>
+    </article>
 
-      <!-- Page contents -->
-      <div id="page1">
-        <h1>Installation</h1>
-        <p>Die Installation von Arch Linux erfolgt manuell über die Kommandozeile. Dieser Prozess ermöglicht maximale Kontrolle und Anpassung des Systems.</p>
+    <article class="section">
+      <h2>Printer Movement</h2>
+      <div class="text-content">
+      <img src="img/corexyvsbedslinger.jpg" alt="CoreXY vs Bedslinger movement">
+        <dl>
+          <dt>Cartesian (Bedslinger)</dt>
+          <dd>
+            The print bed moves back and forth along one axis (typically the Y-axis), while the print head moves along the other two axes (X and Z). This system is simple and cost-effective but can be slower due to the bed's inertia.
+          </dd>
+          <dt>CoreXY</dt>
+          <dd>
+            The print head moves along both the X and Y axes simultaneously using a belt and pulley system. This design allows for faster print speeds and improved accuracy as the bed's mass is stationary
+          </dd>
+          <dt>Delta</dt>
+          <dd>
+            The print head is moved using three arms connected to motors at the top of the printer. This configuration enables very fast print speeds and is often used for large-format printers.
+          </dd>
+        </dl>
       </div>
+    </article>
 
-      <div id="page2">
-        <h1>Paketeverwaltung</h1>
-        <p>Arch Linux nutzt den leistungsfähigen Paketmanager Pacman. Nebenbei gibt es auch die AUR, die Community-Kreierte Pakete beinhaltet.</p>
-        <img class="img" src="/img/pacman.png">
+    <article class="section">
+      <h2>Layer Height and Print Quality</h2>
+      <div class="text-content">
+        <img src="img/layerheightsidebyside.jpg" alt="Comparison of different layer heights">
+        <dl>
+          <dt>Thicker Layers (0.2mm - 0.3mm)</dt>
+          <dd>
+            Result in faster prints but with visible layer lines and less detail. Suitable for prototypes and functional parts where surface finish is not critical.
+          </dd>
+          <dt>Thinner Layers (0.1mm - 0.15mm)</dt>
+          <dd>
+            Offer improved surface quality and finer details but take longer to print. Ideal for models requiring a smoother finish and intricate features.
+          </dd>
+        </dl>
       </div>
+    </article>
 
-      <div id="page3">
-        <h1>Systemkonfiguration</h1>
-        <p>Arch Linux bietet umfangreiche Möglichkeiten zur Systemkonfiguration. Von der Einrichtung des Netzwerks über die Konfiguration des Bootloaders bis hin zur Anpassung der Shell.</p>
-        <img class="img" src="/img/config.png">
+    <article class="section">
+      <h2>SLA vs. FDM</h2>
+      <div class="text-content">
+        <img src="img/fdm.jpg" alt="FDM 3D printer">
+        <dl>
+          <dt>SLA (Stereolithography)</dt>
+          <dd>
+            &#x2022; <b>Process:</b> Uses a laser to cure liquid resin layer by layer. <br>
+            &#x2022; <b>Advantages:</b> High resolution and accuracy, smooth surface finish, capable of producing intricate details. <br>
+            &#x2022; <b>Disadvantages:</b> More expensive materials and equipment, post-processing required (washing and curing), limited build volume compared to some FDM printers. <br>
+          </dd>
+          <dt>FDM (Fused Deposition Modeling)</dt>
+          <dd>
+            &#x2022; <b>Process:</b> Melts and extrudes thermoplastic filament layer by layer. <br>
+            &#x2022; <b>Advantages:</b> Wide variety of materials available, generally less expensive than SLA, larger build volumes possible. <br>
+            &#x2022; <b>Disadvantages:</b> Visible layer lines, lower resolution compared to SLA, can require support structures for complex geometries. <br>
+          </dd>
+        </dl>
       </div>
+    </article>
+  </div>
 
-      <div id="page4">
-        <h1>DE und WM</h1>
-        <p>Arch Linux unterstützt eine Vielzahl von Desktop-Umgebungen und Window Managern. Optionen wie GNOME, KDE Plasma, Xfce oder minimalistische Alternativen wie sway, i3 oder bspwm stehen zur verfügung.</p>
-        <img class="img" src="/img/shell.png">
-    </main>
+  <script src="script.js"></script>
+</body>
 
-    <script src="script.js"></script>
-  </body>
 </html>
